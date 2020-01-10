@@ -1,24 +1,16 @@
 package week
 
 type WeekData struct {
-	typeMap map[string]TypeMap
+	typeMap map[string]TypeInfo
 	UserName string
 	token string
 }
 
-type EventData struct {
-	filename string
-	additions int
-	deletions int
-	date string
+type TypeInfo struct {
+	Files int
+	Additions int
+	Deletions int
 }
-
-type TypeMap struct {
-	additions int
-	deletions int
-	events []EventData
-}
-
 
 type OriginEventData struct {
 	Type string

@@ -16,7 +16,7 @@ func GetFileType(allFileName string) string {
 	fileName := fileNameList[len(fileNameList) - 1]
 	fileNameExtList := strings.Split(fileName, ".")
 	fileNameExt := langMap[fileNameExtList[len(fileNameExtList) - 1]]
-	if fileNameExt != nil {
+	if fileNameExt != "" {
 		return fileNameExt
 	}
 	return "unknow"

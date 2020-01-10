@@ -1,11 +1,16 @@
 package main
 
 import (
-    "github.com/echosoar/gitevent/week"
+	"fmt"
+  "github.com/echosoar/gitevent/week"
 )
 
 func main() {
-    var week *week.WeekData = new(week.WeekData)
+    week := new(week.WeekData)
     week.UserName = "echosoar"
-    week.Run()
+		week.Run()
+		typeMap := week.GetTypeMap()
+		for lang, value := range typeMap {
+			fmt.Printf("%s files:%d add:%d del:%d\n", lang, value.Files, value.Additions, value.Deletions)
+		}
 }
